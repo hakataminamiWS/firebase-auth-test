@@ -5,6 +5,15 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index()
+GET     /sign-in-with-line          controllers.HomeController.signWithLine()
+GET     /callback                   controllers.HomeController.callbackFromLineLogin()
+GET     /get-id-token               controllers.HomeController.idToken()
+GET     /sign-in-ok                 controllers.HomeController.signInOk()
+GET     /sign-out                   controllers.HomeController.signOut()
+
+# Map *-service-worker.js for add header Service-Worker-Allowed
+GET     /assets/javascripts/es-module-service-worker.js controllers.HomeController.assetsWithHeader(file="es-module-service-worker.js")
+GET     /assets/javascripts/import-service-worker.js    controllers.HomeController.assetsWithHeader(file="import-service-worker.js")
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

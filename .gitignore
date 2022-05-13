@@ -13,3 +13,5 @@ target
 .vscode
 project/project
 project/metals.sbt
+conf/pac4j.secret.conf
+conf/serviceAccountKey.json

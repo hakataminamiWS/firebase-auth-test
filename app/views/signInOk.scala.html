@@ -1,0 +1,18 @@
+@(oUserMap: Option[Map[String,String]])
+
+@main("Sign in OK") {
+<h1>Sign in OK</h1>
+
+@oUserMap.map { userMap =>
+@userMap.get("uid")
+<br>
+@userMap.get("userName")
+<br>
+@userMap.get("userPicture")
+<br>
+}
+
+<a href="/sign-out">
+    sign out
+</a>
+}
